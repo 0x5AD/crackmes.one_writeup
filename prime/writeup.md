@@ -7,20 +7,20 @@ Si ce n'est pas le cas il quitte le prog
 
 - La deuxième boucle encode tout les char un à un avec cette fonction: (après décompilation)
     
-    int _encode_func(byte const_0x81,char char_saisie,byte const_0xfb)
+        int _encode_func(byte const_0x81,char char_saisie,byte const_0xfb)
     
-    {
-        char local_1c;
-        int local_8;
+        {
+            char local_1c;
+            int local_8;
         
-        local_1c = char_saisie;
-        local_8 = 1;
-        while (local_1c != '\0') {
-            local_8 = (int)((uint)const_0x81 * local_8) % (uint)const_0xfb;
-            local_1c = local_1c + -1;
+            local_1c = char_saisie;
+            local_8 = 1;
+            while (local_1c != '\0') {
+                local_8 = (int)((uint)const_0x81 * local_8) % (uint)const_0xfb;
+                local_1c = local_1c + -1;
+            }
+            return local_8;
         }
-        return local_8;
-    }
 
 - Une dernière boucle xor la chaine encodé avec comme clé "Th4t's a P455W0rD"
 
